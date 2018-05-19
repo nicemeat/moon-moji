@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 224890417}
   - component: {fileID: 224890416}
   - component: {fileID: 224890415}
+  - component: {fileID: 224890419}
+  - component: {fileID: 224890418}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -139,7 +141,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224890414}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 4d9868e1813546c4ab67d200bdd0e5d5, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &224890416
@@ -186,6 +188,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &224890418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224890414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e882cfac7ae77849aa098aa7492358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sampleType: 1
+  lines: 4096
+  lineSample: 4096
+  scalingFactor: 1
+  dummy: -9999
+  maximum: -495
+  minimum: -912
+--- !u!114 &224890419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224890414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7cad75b648352b49adc4ad7249f1ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sampling: 2
+  moonImgFile: {fileID: 102900000, guid: de44c0154d87b47b181e970c612cef17, type: 3}
+  moonLblFile: {fileID: 102900000, guid: eef54544234304bc0a964cbe2579bd98, type: 3}
 --- !u!1001 &332223530
 Prefab:
   m_ObjectHideFlags: 0
@@ -527,7 +561,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 5000
+  far clip plane: 4000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -597,7 +631,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1629541777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2532.5093, y: 1386.79, z: 2475.8562}
+  m_LocalPosition: {x: 2532.5093, y: 600, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842753116}

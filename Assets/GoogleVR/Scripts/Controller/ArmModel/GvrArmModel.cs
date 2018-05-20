@@ -380,7 +380,7 @@ public class GvrArmModel : GvrBaseArmModel{
   }
 
   /// Get the controller's orientation.
-  protected void GetControllerRotation(out Quaternion rotation, out Quaternion xyRotation, out float xAngle) {
+  public void GetControllerRotation(out Quaternion rotation, out Quaternion xyRotation, out float xAngle) {
     // Find the controller's orientation relative to the player.
     rotation = GvrControllerInput.Orientation;
     rotation = Quaternion.Inverse(torsoRotation) * rotation;

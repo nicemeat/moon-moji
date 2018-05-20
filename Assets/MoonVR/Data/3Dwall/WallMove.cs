@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallMove : MonoBehaviour {
 	bool gameStart = false;
 
-	public float speed = 1f;
+	public float speed = 4f;
 	bool jump;
 	int distance = 5;
 	// Use this for initialization
@@ -18,7 +18,7 @@ public class WallMove : MonoBehaviour {
 		if (!gameStart){
 			
 		}
-		 transform.position = transform.position - Camera.main.transform.forward * distance * Time.deltaTime* 100;
+		transform.position -= new Vector3 (0, 0, speed * Time.deltaTime);
 		if (!jump){
 		}
 

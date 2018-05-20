@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneClick : MonoBehaviour {
+public class click : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (GvrControllerInput.ClickButtonDown)
 		{
-		 SceneManager.LoadScene("Tutorial");
+			SceneManager.LoadScene("MoonSample");
 		}
-		
+
 	}
 }

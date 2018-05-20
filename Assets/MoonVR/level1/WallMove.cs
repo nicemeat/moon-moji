@@ -11,11 +11,13 @@ public class WallMove : MonoBehaviour {
 	bool jump;
 	GameObject player;
 	GameObject jumptext;
+	bool isClear = true;
 	int distance = 5;
 	// Use this for initialization
 	void Start () {
 		jump = false;
 		isStart = false;
+		isClear = true;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		jumptext = GameObject.Find ("jumptext");
 	}
@@ -33,10 +35,21 @@ public class WallMove : MonoBehaviour {
 		} else {
 			jumptext.GetComponent<TextMesh> ().text = "";
 		}
+			
 
+		if ((transform.position.z - player.transform.position.z) / speed <= 0.3 && (transform.position.z - player.transform.position.z) / speed >= 0) {
+			if (player.GetComponent<playerscript> ().height - player.GetComponent<playerscript> ().mainCamera.transform.position.y >= 0.2) {
+				isClear = true;
+			} else {
+				isClear = false;
+			}
+		}
 		if ((transform.position.z - player.transform.position.z) / speed <= 0) {
-			//jumptext.GetComponent<TextMesh> ().text = "グレート! 5秒後に次のレベルに移動します";
-			//スコア表示
+			if (isClear) {
+				jumptext.GetComponent<TextMesh> ().text = "グレート!";
+			} else {
+				jumptext.GetComponent<TextMesh> ().text = "失敗！！";
+			}
 		}
 		if ((transform.position.z - player.transform.position.z) / speed <= -5) {
 			SceneManager.LoadScene("Level2");

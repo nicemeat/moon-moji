@@ -13,9 +13,9 @@ public class playerscript2 : MonoBehaviour {
 	GameObject angletextz;
 	GameObject info;
 	//	private GameObject _parent;
-	GameObject mainCamera ;
+	public GameObject mainCamera ;
 	GameObject player;
-	float height;
+	public float height;
 	string text = "";
 	Rigidbody rb;
 	public bool jumping = false;
@@ -38,11 +38,11 @@ public class playerscript2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (mainCamera.transform.position.y - height >= 0.2 && jumping != true) {
+		if (mainCamera.transform.position.y - height >= 0.13 && jumping != true) {
 			text += "\njump!";
 			jumping = true;
 			rb.AddForce (0, 240, 0);
-		} else if (mainCamera.transform.position.y - height < 0.2) {
+		} else if (mainCamera.transform.position.y - height < 0.13) {
 			jumping = false;
 		}
 

@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WallMove2 : MonoBehaviour {
+public class WallMove3 : MonoBehaviour {
 	bool gameStart = false;
 
 	public float speed = 8f;
 	public bool isStart;
 	bool jump;
 	GameObject player;
-	GameObject jumptext;
 	bool isClear = false;
+	GameObject jumptext;
+	public GameObject imageDisplay;
+	public GameObject jumpDisplay;
 	int distance = 5;
 	// Use this for initialization
 	void Start () {
@@ -29,23 +31,25 @@ public class WallMove2 : MonoBehaviour {
 		}
 		Debug.Log ((player.transform.position.z - this.transform.position.z) / speed);
 		//Debug.Log (this.transform.position.x);
-
 		if ((transform.position.z - player.transform.position.z) / speed < 6 && (transform.position.z - player.transform.position.z) / speed > 2 && !player.GetComponent<playerscript>().jumping) {
 			jumptext.GetComponent<TextMesh> ().text = "飛んで！";
+			jumpDisplay.SetActive (true);
 		} else {
 			jumptext.GetComponent<TextMesh> ().text = "";
+			jumpDisplay.SetActive (false);
 		}
 
 		if ((transform.position.z - player.transform.position.z) / speed <= 0.3 && (transform.position.z - player.transform.position.z) / speed >= 0) {
-			if (player.GetComponent<playerscript2> ().mainCamera.transform.position.y >= 302 && player.GetComponent<playerscript2> ().mainCamera.transform.position.y <= 308) {
-				isClear = false;
-			} else {
+			if (player.GetComponent<playerscript3> ().mainCamera.transform.position.y >= 307 && player.GetComponent<playerscript3> ().mainCamera.transform.position.y <= 310) {
 				isClear = true;
+			} else {
+				isClear = false;
 			}
 		}
 		if ((transform.position.z - player.transform.position.z) / speed <= 0) {
 			if (isClear) {
 				jumptext.GetComponent<TextMesh> ().text = "グレート!";
+				imageDisplay.SetActive (true);
 			} else {
 				jumptext.GetComponent<TextMesh> ().text = "失敗！！";
 			}

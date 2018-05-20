@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class managerscript2 : MonoBehaviour {
+public class managerscript3 : MonoBehaviour {
 	GameObject statetext;
 	GameObject wall2;
 	// Use this for initialization
 	void Start () {
 		statetext = GameObject.Find ("statetext");
-		wall2 = GameObject.Find ("pose4");
+		wall2 = GameObject.Find ("pose1");
 		//statetext.GetComponent<TextMesh> ().text = "ああああああ";
 	}
 
@@ -21,7 +21,7 @@ public class managerscript2 : MonoBehaviour {
 		}
 
 		if (Time.timeSinceLevelLoad >= 7 && Time.timeSinceLevelLoad <= 8) {
-			wall2.GetComponent<WallMove2> ().isStart = true;
+			wall2.GetComponent<WallMove3> ().isStart = true;
 		}
 
 

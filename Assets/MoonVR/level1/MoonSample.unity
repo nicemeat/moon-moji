@@ -364,6 +364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   isStart: 0
+  imageDisplay: {fileID: 0}
+  jumpDisplay: {fileID: 0}
 --- !u!1 &596119668
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7b2d4d46014420aa59cf8a9b1a7989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  height: 0
   jumping: 0
 --- !u!1 &1392118389
 GameObject:
@@ -1005,7 +1009,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1497389656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9, y: 10.95, z: 20.6}
+  m_LocalPosition: {x: 0.07, y: 6.67, z: 20.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1519160342}
@@ -1022,8 +1026,8 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 20
   m_FontStyle: 0
@@ -1345,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33211982514e4b338e3c5b614129302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDisplay: {fileID: 0}
 --- !u!1 &1833027373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,6 +1616,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.004
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f3b7960e7e8764ac4a693ae96f2c2b99, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94b2566bdbbe14c6abef47acad7179cc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3b7960e7e8764ac4a693ae96f2c2b99, type: 3}
   m_IsPrefabParent: 0
